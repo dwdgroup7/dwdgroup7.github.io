@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="On 13th Feb 2017, we(Yunxiang and Osama) have a meeting to learn some basic things about LoPy. First, we tried to read and understand the code in “Nod">
+    
 
     <!--Author-->
     
@@ -17,6 +19,8 @@
     
 
     <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Trial of LoPy"/>
     
 
     <!--Open Graph Site Name-->
@@ -29,7 +33,7 @@
 
     <!-- Title -->
     
-    <title>Archives - DESIGN WITH DATA</title>
+    <title>Trial of LoPy - DESIGN WITH DATA</title>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/sass/main.css">
@@ -106,43 +110,48 @@
                 <!-- Main Content -->
                 
 
-<section class="archives">
+    <h1 class="title">Trial of LoPy</h1>
+    <div class="meta">
+        2017-02-13
+    </div>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<p>On 13th Feb 2017, we(Yunxiang and Osama) have a meeting to learn some basic things about LoPy. First, we tried to read and understand the code in “NodesToCentral” folder, and We wrote a simple protocol, where device 17 (LoPy 17) send something to device 07 (LoPy 07) and change the color of its.</p>
+<p>Moreover, we are curious about how to use LoPy to send messages by bluetooth. So we read <a href="https://docs.pycom.io/pycom_esp32/library/network.Bluetooth.html" target="_blank" rel="external">the LoPy document about Bluetooth</a> and found a interesting way to make communication with others. It is advertisement. We made device 17 sent an advertisement through Bluetooth and 07 scanning and print the information of the scanned devices, such as their name and what they advertisement.</p>
+<p>The First step is setting advertisement and configuring the data to be sent.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bluetooth.set_advertisement(*, name=<span class="keyword">None</span>, manufacturer_data=<span class="keyword">None</span>, service_data=<span class="keyword">None</span>, service_uuid=<span class="keyword">None</span>)</div></pre></td></tr></table></figure></p>
+<p>The name and uuid of the service is necessary, while the data can be None.</p>
+<p>The second step is starting sending advertisements.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bluetooth.advertise([Enable])</div></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> network <span class="keyword">import</span> Bluetooth</div><div class="line"></div><div class="line">bluetooth = Bluetooth()</div><div class="line">bluetooth.set_advertisement(name=<span class="string">'DWDGroup7'</span>, manufacturer_data=<span class="string">'hello'</span>, service_data=<span class="string">'hi'</span>, service_uuid=<span class="string">b'1234567890123456'</span>)</div></pre></td></tr></table></figure>
+<div align="center"><br><img src="http://okq5nvba3.bkt.clouddn.com/2017021625302scan_buletooth1.jpg?imageMogr2/thumbnail/1300x1300" alt="scan_buletooth1"><br></div>
+
+<p>The last step is setting up a receiver to get the name and manufacturer data of the advertiser.</p>
+<div align="center"><br><img src="http://okq5nvba3.bkt.clouddn.com/2017021672017scan_buletooth2.png?imageMogr2/thumbnail/1300x1300" alt="scan_buletooth2"><br></div>
+
+<p>The output shows two things “DWDGroup7” which is the name of the advertisement of device 17 and “b’68656c6c6f” is the ASCII Encoding of hello in the HEXADECIMAL, and we figure this out after we used <a href="http://www.dcode.fr/ascii-code" target="_blank" rel="external">the ASCII decoder</a>.</p>
+<p>Finally, we thought (but we are not yet sure) that the two other devices that shown in the snapshot with None are the Bluetooth sent by devices around device 07, such as Osama’s phone which its Bluetooth was switched on.</p>
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
     
-    <ul class="archive-list">
-        
-            <li>
-    <a href="/2017/01/17/hello-world/">Hello World</a>
-</li>
+</div>
 
-        
-            <li>
-    <a href="/2017/01/24/Cultureberg Workshop 1/">Cultureberg Workshop 1</a>
-</li>
 
-        
-            <li>
-    <a href="/2017/01/20/First Meeting/">First Meeting</a>
-</li>
 
-        
-            <li>
-    <a href="/2017/01/31/Cultureberg Workshop 2/">Cultureberg Workshop 2</a>
-</li>
+<!-- Comments -->
+<div>
+    
 
-        
-            <li>
-    <a href="/2017/02/13/Trial of LoPy/">Trial of LoPy</a>
-</li>
 
-        
-            <li>
-    <a href="/2017/02/14/Cardboard Prototyping/">Cardboard Prototyping</a>
-</li>
-
-        
-    </ul>
-</section><!-- end main -->
-
+</div>
 
 
 
