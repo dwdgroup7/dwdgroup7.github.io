@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="Between 9th and 11th March, Osama Almurshed analyzes and gather the data from Edinburgh collected website. We tried to collect the data from Edinburgh">
+    
 
     <!--Author-->
     
@@ -17,6 +19,8 @@
     
 
     <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Gathering data from Edinburgh Collected"/>
     
 
     <!--Open Graph Site Name-->
@@ -29,7 +33,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2017 - DESIGN WITH DATA</title>
+    <title>Gathering data from Edinburgh Collected - DESIGN WITH DATA</title>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/sass/main.css">
@@ -106,53 +110,38 @@
                 <!-- Main Content -->
                 
 
-<section class="archives">
+    <h1 class="title">Gathering data from Edinburgh Collected</h1>
+    <div class="meta">
+        2017-03-12
+    </div>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<p>Between 9th and 11th March, Osama Almurshed analyzes and gather the data from Edinburgh collected website. We tried to collect the data from Edinburgh collected using the API that is at <a href="https://www.edinburghopendata.info/dv/dataset/edinburgh-collected-api" target="_blank" rel="external">https://www.edinburghopendata.info/dv/dataset/edinburgh-collected-api</a>. However, memories.json seems to be not complete (has not been recently updated). Thus we decided to scrape the website and gather the information (By read/parse them in HTML).</p>
+<p>Firstly, We started by trying the parseHub app <a href="https://www.parsehub.com/intro" target="_blank" rel="external">https://www.parsehub.com/intro</a>. However, the free version can only fetch 200 page every 40 minutes which seems to be not practical because we need to collect around 1127 pages. Therefore, we decided to use parseHub to collect information of only 37 links (main pages, that hold the information of memories pages) at <a href="https://www.edinburghcollected.org/memories" target="_blank" rel="external">https://www.edinburghcollected.org/memories</a> main page.</p>
+<p>After collecting the main pages’ information, we wrote two java codes that extract the data from each memory page in the main pages. The first program retrieves the data such as ID, Title, Date, About,  Location, and Image links then save them in CSV file. The second one downloads images from the links in the CSV file and renames them according to their number (not ID) in the previous CSV file.</p>
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
     
-    <ul class="archive-list">
-        
-            <li>
-    <a href="/2017/01/17/hello-world/">Hello World</a>
-</li>
+</div>
 
-        
-            <li>
-    <a href="/2017/01/24/Cultureberg Workshop 1/">Cultureberg Workshop 1</a>
-</li>
 
-        
-            <li>
-    <a href="/2017/01/20/First Meeting/">First Meeting</a>
-</li>
 
-        
-            <li>
-    <a href="/2017/01/31/Cultureberg Workshop 2/">Cultureberg Workshop 2</a>
-</li>
+<!-- Comments -->
+<div>
+    
 
-        
-            <li>
-    <a href="/2017/02/13/Trial of LoPy/">Trial of LoPy</a>
-</li>
 
-        
-            <li>
-    <a href="/2017/02/14/Cardboard Prototyping/">Cardboard Prototyping</a>
-</li>
-
-        
-            <li>
-    <a href="/2017/03/12/Gathering data from Edinburgh Collected/">Gathering data from Edinburgh Collected</a>
-</li>
-
-        
-            <li>
-    <a href="/2017/03/11/Video Capture/">Video Capture</a>
-</li>
-
-        
-    </ul>
-</section><!-- end main -->
-
+</div>
 
 
 
